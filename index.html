@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Pour Zoé 🌹</title>
+    <style>
+        body {
+            font-family: Georgia, serif;
+            background-color: #fff5f7;
+            text-align: center;
+            padding: 40px;
+        }
+        h1 {
+            color: #b03060;
+        }
+        p {
+            font-size: 18px;
+            max-width: 600px;
+            margin: auto;
+        }
+        button {
+            margin: 20px;
+            padding: 15px 30px;
+            font-size: 16px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+        }
+        .yes {
+            background-color: #e63946;
+            color: white;
+        }
+        .no {
+            background-color: #ddd;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Zoé… 🌹</h1>
+
+<p>
+On se connaît depuis peu, mais assez pour que j’aie envie de te poser une question simple.<br><br>
+Sans pression, sans obligation.<br>
+Juste avec sincérité.
+</p>
+
+<br><br>
+
+<p>
+Est-ce que tu accepterais de partager cette Saint-Valentin avec moi ?
+</p>
+
+<button class="yes" onclick="oui()">💌 Oui, avec plaisir</button>
+<button class="no" onclick="non()">🤍 Non, mais merci</button>
+
+<script>
+function oui() {
+    document.body.innerHTML = "<h1>Alors c’est un oui… 💖</h1><p>J’ai hâte de créer ce moment avec toi 🌹</p>";
+}
+function non() {
+    document.body.innerHTML = "<h1>Merci pour ta sincérité 🤍</h1><p>Cette page reste un sourire, rien de plus.</p>";
+}
+</script>
+
+</body>
+</html>
