@@ -2,169 +2,167 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<title>Pour Zoé 🌹</title>
+<title>Zoé 💌</title>
 
 <style>
-/* ===== ANIMATIONS ===== */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.04); }
-    100% { transform: scale(1); }
-}
-
-@keyframes float {
-    from { transform: translateY(0); }
-    to { transform: translateY(-60px); }
-}
-
-/* ===== BASE ===== */
 body {
     margin: 0;
-    font-family: Georgia, serif;
-    background-color: #fff5f7;
-    text-align: center;
-    padding: 40px;
+    font-family: "Georgia", serif;
+    background: #fff4f6;
     overflow: hidden;
-    animation: fadeIn 1.2s ease-out;
 }
 
-h1, p {
+/* CONTENU */
+.container {
     position: relative;
     z-index: 2;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    animation: fadeIn 1.5s ease;
 }
 
 h1 {
     color: #b03060;
+    font-size: 3em;
+    margin-bottom: 20px;
 }
 
 p {
-    font-size: 18px;
-    max-width: 600px;
-    margin: auto;
+    font-size: 1.3em;
+    max-width: 700px;
+    line-height: 1.6;
 }
 
-/* ===== COEURS ===== */
-.hearts {
-    position: fixed;
-    inset: 0;
-    z-index: 0;
-    pointer-events: none;
-}
-
-.heart {
-    position: absolute;
-    color: rgba(176, 48, 96, 0.12);
-    animation: float linear infinite;
-}
-
-/* ===== BOUTONS ===== */
+/* BOUTONS */
 .buttons {
-    margin-top: 50px;
+    margin-top: 60px;
     display: flex;
-    justify-content: center;
-    gap: 40px;
+    gap: 140px;
     position: relative;
-    z-index: 2;
 }
 
 .zone {
-    width: 200px;
-    height: 80px;
+    width: 260px;
+    height: 90px;
     position: relative;
 }
 
 button {
-    padding: 15px 30px;
-    font-size: 16px;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    transition: transform 0.3s ease;
+    padding: 18px 28px;
+    font-size: 1.1em;
+    border-radius: 40px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease;
 }
 
 .yes {
-    background-color: #e63946;
+    background: #e63946;
     color: white;
-    animation: pulse 3.5s ease-in-out infinite;
+    left: 0;
 }
 
 .no {
-    background-color: #ddd;
+    background: #ddd;
     color: #333;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* COEURS */
+.hearts {
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+}
+
+.heart {
+    position: absolute;
+    color: rgba(176, 48, 96, 0.25);
+    animation: float linear infinite;
+}
+
+/* ANIMATIONS */
+@keyframes float {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-120vh);
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 </style>
 </head>
 
 <body>
 
-<!-- 💗 COEURS EN ARRIÈRE-PLAN -->
+<!-- COEURS -->
 <div class="hearts">
-    <!-- Génération dense mais discrète -->
-    <span class="heart" style="left:5%; top:85%; font-size:12px; animation-duration:18s;">❤</span>
-    <span class="heart" style="left:12%; top:60%; font-size:20px; animation-duration:25s;">❤</span>
-    <span class="heart" style="left:20%; top:90%; font-size:10px; animation-duration:22s;">❤</span>
-    <span class="heart" style="left:28%; top:70%; font-size:16px; animation-duration:30s;">❤</span>
-    <span class="heart" style="left:36%; top:82%; font-size:14px; animation-duration:26s;">❤</span>
-    <span class="heart" style="left:44%; top:65%; font-size:22px; animation-duration:34s;">❤</span>
-    <span class="heart" style="left:52%; top:88%; font-size:12px; animation-duration:20s;">❤</span>
-    <span class="heart" style="left:60%; top:72%; font-size:18px; animation-duration:28s;">❤</span>
-    <span class="heart" style="left:68%; top:92%; font-size:10px; animation-duration:24s;">❤</span>
-    <span class="heart" style="left:76%; top:60%; font-size:20px; animation-duration:32s;">❤</span>
-    <span class="heart" style="left:84%; top:80%; font-size:14px; animation-duration:27s;">❤</span>
-    <span class="heart" style="left:92%; top:68%; font-size:16px; animation-duration:29s;">❤</span>
+    <span class="heart" style="left:4%; top:95%; font-size:16px; animation-duration:22s;">❤</span>
+    <span class="heart" style="left:10%; top:90%; font-size:26px; animation-duration:30s;">❤</span>
+    <span class="heart" style="left:18%; top:85%; font-size:20px; animation-duration:28s;">❤</span>
+    <span class="heart" style="left:26%; top:92%; font-size:14px; animation-duration:24s;">❤</span>
+    <span class="heart" style="left:34%; top:88%; font-size:28px; animation-duration:35s;">❤</span>
+    <span class="heart" style="left:42%; top:94%; font-size:18px; animation-duration:26s;">❤</span>
+    <span class="heart" style="left:50%; top:90%; font-size:22px; animation-duration:32s;">❤</span>
+    <span class="heart" style="left:58%; top:96%; font-size:14px; animation-duration:23s;">❤</span>
+    <span class="heart" style="left:66%; top:88%; font-size:30px; animation-duration:38s;">❤</span>
+    <span class="heart" style="left:74%; top:92%; font-size:18px; animation-duration:27s;">❤</span>
+    <span class="heart" style="left:82%; top:85%; font-size:24px; animation-duration:34s;">❤</span>
+    <span class="heart" style="left:90%; top:95%; font-size:16px; animation-duration:25s;">❤</span>
 </div>
 
-<h1>Zoé… 🌹</h1>
+<!-- CONTENU -->
+<div class="container" id="content">
+    <h1>Zoé… 🌹</h1>
 
-<p>
-On se connaît depuis peu, mais assez pour que j’aie envie de te poser une question simple.<br><br>
-Sans pression, sans obligation.<br>
-Juste avec sincérité.
-</p>
+    <p>
+        On se connaît depuis peu, mais assez pour que j’aie envie de te poser une question simple.
+        <br><br>
+        Sans pression, sans obligation.<br>
+        Juste avec sincérité.
+        <br><br>
+        Est-ce que tu accepterais de partager cette Saint-Valentin avec moi ?
+    </p>
 
-<br><br>
-
-<p>
-Est-ce que tu accepterais de partager cette Saint-Valentin avec moi ?
-</p>
-
-<div class="buttons">
-    <div class="zone">
-        <button class="yes" onclick="oui()">💌 Oui, avec plaisir</button>
-    </div>
-    <div class="zone">
-        <button class="no" id="noBtn">🤍 Non, mais merci</button>
+    <div class="buttons">
+        <div class="zone">
+            <button class="yes" onclick="oui()">💌 Oui, avec plaisir</button>
+        </div>
+        <div class="zone">
+            <button class="no" id="noBtn">🤍 Non, mais merci</button>
+        </div>
     </div>
 </div>
 
 <script>
-// Bouton NON qui se déplace uniquement dans sa zone
 const noBtn = document.getElementById("noBtn");
 
-noBtn.addEventListener("mouseenter", () => {
-    const x = Math.random() * 120 - 60;
-    const y = Math.random() * 40 - 20;
-    noBtn.style.transform = `translate(-50%, 0) translate(${x}px, ${y}px)`;
+noBtn.addEventListener("mouseover", () => {
+    const x = Math.random() * 160 - 80;
+    const y = Math.random() * 80 - 40;
+    noBtn.style.transform = `translate(${x}px, ${y}px)`;
 });
 
-// Réponse OUI
 function oui() {
-    document.body.innerHTML = `
-        <div style="animation: fadeIn 1s ease-out;">
-            <h1>Alors c’est un oui… 💖</h1>
-            <p>
-            J’aimerais t’inviter le <strong>19 février 2026</strong>.<br><br>
-            J’ai hâte de créer ce moment avec toi 🌹
-            </p>
-        </div>
+    document.getElementById("content").innerHTML = `
+        <h1>💖</h1>
+        <p style="font-size:1.6em;">
+            Alors c’est une date 💫<br><br>
+            <strong>19/02/2026</strong><br><br>
+            J’ai déjà hâte.
+        </p>
     `;
 }
 </script>
