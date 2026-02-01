@@ -5,41 +5,69 @@
 <title>Pour Zoé 🌹</title>
 
 <style>
-/* Animation d’apparition de la page */
+/* ===== ANIMATIONS ===== */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* Battement très doux du bouton OUI */
 @keyframes pulse {
     0% { transform: scale(1); }
     50% { transform: scale(1.04); }
     100% { transform: scale(1); }
 }
 
+@keyframes float {
+    0% { transform: translateY(0); opacity: 0.25; }
+    50% { opacity: 0.4; }
+    100% { transform: translateY(-40px); opacity: 0.25; }
+}
+
+/* ===== BASE ===== */
 body {
+    margin: 0;
     font-family: Georgia, serif;
     background-color: #fff5f7;
     text-align: center;
     padding: 40px;
+    overflow: hidden;
     animation: fadeIn 1.2s ease-out;
 }
 
 h1 {
     color: #b03060;
+    position: relative;
+    z-index: 2;
 }
 
 p {
     font-size: 18px;
     max-width: 600px;
     margin: auto;
+    position: relative;
+    z-index: 2;
 }
 
+/* ===== COEURS ARRIÈRE-PLAN ===== */
+.hearts {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.heart {
+    position: absolute;
+    color: rgba(176, 48, 96, 0.15);
+    animation: float linear infinite;
+}
+
+/* ===== BOUTONS ===== */
 .buttons {
     margin-top: 40px;
     position: relative;
     height: 140px;
+    z-index: 2;
 }
 
 button {
@@ -56,63 +84,29 @@ button {
     background-color: #e63946;
     color: white;
     left: 50%;
-    transform: translateX(-120%);
+    transform: translateX(-160%);
     animation: pulse 3.5s ease-in-out infinite;
+    z-index: 2;
 }
 
 .no {
     background-color: #ddd;
     color: #333;
     left: 50%;
-    transform: translateX(20%);
+    transform: translateX(40%);
+    z-index: 1;
 }
 </style>
 </head>
 
 <body>
 
-<h1>Zoé… 🌹</h1>
-
-<p>
-On se connaît depuis peu, mais assez pour que j’aie envie de te poser une question simple.<br><br>
-Sans pression, sans obligation.<br>
-Juste avec sincérité.
-</p>
-
-<br><br>
-
-<p>
-Est-ce que tu accepterais de partager cette Saint-Valentin avec moi ?
-</p>
-
-<div class="buttons">
-    <button class="yes" onclick="oui()">💌 Oui, avec plaisir</button>
-    <button class="no" id="noBtn">🤍 Non, mais merci</button>
+<!-- COEURS -->
+<div class="hearts">
+    <span class="heart" style="left:10%; top:80%; font-size:14px; animation-duration:18s;">❤</span>
+    <span class="heart" style="left:25%; top:60%; font-size:20px; animation-duration:22s;">❤</span>
+    <span class="heart" style="left:40%; top:90%; font-size:12px; animation-duration:20s;">❤</span>
+    <span class="heart" style="left:55%; top:70%; font-size:18px; animation-duration:25s;">❤</span>
+    <span class="heart" style="left:70%; top:85%; font-size:10px; animation-duration:19s;">❤</span>
+    <span class="heart" style="left:85%; top:65%; font-size:16px; animation-duration:24s;">❤</span>
 </div>
-
-<script>
-// Bouton NON qui se déplace
-const noBtn = document.getElementById("noBtn");
-
-noBtn.addEventListener("mouseenter", () => {
-    const x = Math.random() * 300 - 150;
-    const y = Math.random() * 80 - 40;
-    noBtn.style.transform = `translate(${x}px, ${y}px)`;
-});
-
-// Réponse OUI avec apparition douce
-function oui() {
-    document.body.innerHTML = `
-        <div style="animation: fadeIn 1s ease-out;">
-            <h1>Alors c’est un oui… 💖</h1>
-            <p>
-            J’aimerais t’inviter le <strong>19 février 2026</strong>.<br><br>
-            J’ai hâte de créer ce moment avec toi 🌹
-            </p>
-        </div>
-    `;
-}
-</script>
-
-</body>
-</html>
