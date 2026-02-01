@@ -110,3 +110,49 @@ button {
     <span class="heart" style="left:70%; top:85%; font-size:10px; animation-duration:19s;">❤</span>
     <span class="heart" style="left:85%; top:65%; font-size:16px; animation-duration:24s;">❤</span>
 </div>
+
+<h1>Zoé… 🌹</h1>
+
+<p>
+On se connaît depuis peu, mais assez pour que j’aie envie de te poser une question simple.<br><br>
+Sans pression, sans obligation.<br>
+Juste avec sincérité.
+</p>
+
+<br><br>
+
+<p>
+Est-ce que tu accepterais de partager cette Saint-Valentin avec moi ?
+</p>
+
+<div class="buttons">
+    <button class="yes" onclick="oui()">💌 Oui, avec plaisir</button>
+    <button class="no" id="noBtn">🤍 Non, mais merci</button>
+</div>
+
+<script>
+// Bouton NON qui se déplace
+const noBtn = document.getElementById("noBtn");
+
+noBtn.addEventListener("mouseenter", () => {
+    const x = Math.random() * 300 - 150;
+    const y = Math.random() * 80 - 40;
+    noBtn.style.transform = `translate(${x}px, ${y}px)`;
+});
+
+// Réponse OUI
+function oui() {
+    document.body.innerHTML = `
+        <div style="animation: fadeIn 1s ease-out;">
+            <h1>Alors c’est un oui… 💖</h1>
+            <p>
+            J’aimerais t’inviter le <strong>19 février 2026</strong>.<br><br>
+            J’ai hâte de créer ce moment avec toi 🌹
+            </p>
+        </div>
+    `;
+}
+</script>
+
+</body>
+</html>
