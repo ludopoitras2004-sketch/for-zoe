@@ -5,11 +5,25 @@
 <title>Pour Zoé 🌹</title>
 
 <style>
+/* Animation d’apparition de la page */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Battement très doux du bouton OUI */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.04); }
+    100% { transform: scale(1); }
+}
+
 body {
     font-family: Georgia, serif;
     background-color: #fff5f7;
     text-align: center;
     padding: 40px;
+    animation: fadeIn 1.2s ease-out;
 }
 
 h1 {
@@ -43,6 +57,7 @@ button {
     color: white;
     left: 50%;
     transform: translateX(-120%);
+    animation: pulse 3.5s ease-in-out infinite;
 }
 
 .no {
@@ -85,14 +100,16 @@ noBtn.addEventListener("mouseenter", () => {
     noBtn.style.transform = `translate(${x}px, ${y}px)`;
 });
 
-// Réponse OUI
+// Réponse OUI avec apparition douce
 function oui() {
     document.body.innerHTML = `
-        <h1>Alors c’est un oui… 💖</h1>
-        <p>
-        J’aimerais t’inviter le <strong>19 février 2026</strong>.<br><br>
-        J’ai hâte de créer ce moment avec toi 🌹
-        </p>
+        <div style="animation: fadeIn 1s ease-out;">
+            <h1>Alors c’est un oui… 💖</h1>
+            <p>
+            J’aimerais t’inviter le <strong>19 février 2026</strong>.<br><br>
+            J’ai hâte de créer ce moment avec toi 🌹
+            </p>
+        </div>
     `;
 }
 </script>
