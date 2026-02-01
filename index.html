@@ -2,48 +2,51 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<title>Zoé 💌</title>
+<title>Zoé 💖</title>
 
 <style>
+* {
+    box-sizing: border-box;
+    font-family: "Georgia", serif;
+}
+
 body {
     margin: 0;
-    font-family: "Georgia", serif;
-    background: #fff4f6;
+    height: 100vh;
+    background: #fff3f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     overflow: hidden;
 }
 
-/* CONTENU */
+/* Contenu principal */
 .container {
-    position: relative;
-    z-index: 2;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     text-align: center;
-    padding: 20px;
-    animation: fadeIn 1.5s ease;
+    max-width: 700px;
+    padding: 40px;
+    transform: translateY(-20px);
+    z-index: 2;
 }
 
 h1 {
-    color: #b03060;
     font-size: 3em;
-    margin-bottom: 20px;
+    color: #b03060;
+    margin-bottom: 30px;
 }
 
 p {
-    font-size: 1.3em;
-    max-width: 700px;
+    font-size: 1.2em;
     line-height: 1.6;
+    margin-bottom: 25px;
 }
 
-/* BOUTONS */
+/* Boutons */
 .buttons {
-    margin-top: 60px;
+    margin-top: 30px;
     display: flex;
+    justify-content: center;
     gap: 140px;
-    position: relative;
 }
 
 .zone {
@@ -54,28 +57,32 @@ p {
 
 button {
     position: absolute;
+    top: 0;
     padding: 18px 28px;
-    font-size: 1.1em;
     border-radius: 40px;
     border: none;
+    font-size: 1.1em;
     cursor: pointer;
-    transition: transform 0.2s ease;
+    transition: all 0.3s ease;
+    white-space: nowrap;
 }
 
 .yes {
     background: #e63946;
     color: white;
-    left: 0;
+    box-shadow: 0 10px 25px rgba(230,57,70,0.3);
+}
+
+.yes:hover {
+    transform: scale(1.05);
 }
 
 .no {
-    background: #ddd;
+    background: #dedede;
     color: #333;
-    left: 50%;
-    transform: translateX(-50%);
 }
 
-/* COEURS */
+/* Coeurs */
 .hearts {
     position: fixed;
     inset: 0;
@@ -88,51 +95,53 @@ button {
     animation: float linear infinite;
 }
 
-/* ANIMATIONS */
 @keyframes float {
     from {
         transform: translateY(0);
+        opacity: 0.4;
     }
     to {
         transform: translateY(-120vh);
+        opacity: 0;
     }
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
 }
 </style>
 </head>
 
 <body>
 
-<!-- COEURS -->
+<!-- Coeurs -->
 <div class="hearts">
-    <span class="heart" style="left:4%; top:95%; font-size:16px; animation-duration:22s;">❤</span>
-    <span class="heart" style="left:10%; top:90%; font-size:26px; animation-duration:30s;">❤</span>
-    <span class="heart" style="left:18%; top:85%; font-size:20px; animation-duration:28s;">❤</span>
-    <span class="heart" style="left:26%; top:92%; font-size:14px; animation-duration:24s;">❤</span>
-    <span class="heart" style="left:34%; top:88%; font-size:28px; animation-duration:35s;">❤</span>
-    <span class="heart" style="left:42%; top:94%; font-size:18px; animation-duration:26s;">❤</span>
-    <span class="heart" style="left:50%; top:90%; font-size:22px; animation-duration:32s;">❤</span>
-    <span class="heart" style="left:58%; top:96%; font-size:14px; animation-duration:23s;">❤</span>
-    <span class="heart" style="left:66%; top:88%; font-size:30px; animation-duration:38s;">❤</span>
-    <span class="heart" style="left:74%; top:92%; font-size:18px; animation-duration:27s;">❤</span>
-    <span class="heart" style="left:82%; top:85%; font-size:24px; animation-duration:34s;">❤</span>
-    <span class="heart" style="left:90%; top:95%; font-size:16px; animation-duration:25s;">❤</span>
+    <span class="heart" style="left:5%; top:90%; font-size:18px; animation-duration:22s;">❤</span>
+    <span class="heart" style="left:12%; top:85%; font-size:26px; animation-duration:30s;">❤</span>
+    <span class="heart" style="left:20%; top:92%; font-size:14px; animation-duration:20s;">❤</span>
+
+    <span class="heart" style="left:30%; top:88%; font-size:22px; animation-duration:28s;">❤</span>
+    <span class="heart" style="left:38%; top:80%; font-size:30px; animation-duration:36s;">❤</span>
+    <span class="heart" style="left:46%; top:90%; font-size:16px; animation-duration:24s;">❤</span>
+
+    <span class="heart" style="left:56%; top:85%; font-size:24px; animation-duration:32s;">❤</span>
+    <span class="heart" style="left:65%; top:92%; font-size:14px; animation-duration:21s;">❤</span>
+    <span class="heart" style="left:72%; top:88%; font-size:26px; animation-duration:34s;">❤</span>
+
+    <span class="heart" style="left:82%; top:90%; font-size:18px; animation-duration:25s;">❤</span>
+    <span class="heart" style="left:90%; top:84%; font-size:28px; animation-duration:38s;">❤</span>
 </div>
 
-<!-- CONTENU -->
-<div class="container" id="content">
+<!-- Contenu -->
+<div class="container">
     <h1>Zoé… 🌹</h1>
 
     <p>
         On se connaît depuis peu, mais assez pour que j’aie envie de te poser une question simple.
-        <br><br>
+    </p>
+
+    <p>
         Sans pression, sans obligation.<br>
         Juste avec sincérité.
-        <br><br>
+    </p>
+
+    <p>
         Est-ce que tu accepterais de partager cette Saint-Valentin avec moi ?
     </p>
 
@@ -140,6 +149,7 @@ button {
         <div class="zone">
             <button class="yes" onclick="oui()">💌 Oui, avec plaisir</button>
         </div>
+
         <div class="zone">
             <button class="no" id="noBtn">🤍 Non, mais merci</button>
         </div>
@@ -149,20 +159,35 @@ button {
 <script>
 const noBtn = document.getElementById("noBtn");
 
-noBtn.addEventListener("mouseover", () => {
-    const x = Math.random() * 160 - 80;
-    const y = Math.random() * 80 - 40;
-    noBtn.style.transform = `translate(${x}px, ${y}px)`;
+noBtn.addEventListener("mouseenter", () => {
+    const zone = noBtn.parentElement;
+    const maxX = zone.clientWidth - noBtn.offsetWidth;
+    const maxY = zone.clientHeight - noBtn.offsetHeight;
+
+    const x = Math.random() * maxX;
+    const y = Math.random() * maxY;
+
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
 });
 
 function oui() {
-    document.getElementById("content").innerHTML = `
-        <h1>💖</h1>
-        <p style="font-size:1.6em;">
-            Alors c’est une date 💫<br><br>
-            <strong>19/02/2026</strong><br><br>
-            J’ai déjà hâte.
-        </p>
+    document.body.innerHTML = `
+        <div style="
+            height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            background:#fff3f6;
+            text-align:center;
+            font-family:Georgia,serif;
+        ">
+            <div>
+                <h1 style="color:#b03060;">💖</h1>
+                <h2>19/02/2026</h2>
+                <p>J’ai tellement hâte 💕</p>
+            </div>
+        </div>
     `;
 }
 </script>
