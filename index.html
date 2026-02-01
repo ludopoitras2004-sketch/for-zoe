@@ -1,41 +1,59 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <title>Pour Zoé 🌹</title>
-    <style>
-        body {
-            font-family: Georgia, serif;
-            background-color: #fff5f7;
-            text-align: center;
-            padding: 40px;
-        }
-        h1 {
-            color: #b03060;
-        }
-        p {
-            font-size: 18px;
-            max-width: 600px;
-            margin: auto;
-        }
-        button {
-            margin: 20px;
-            padding: 15px 30px;
-            font-size: 16px;
-            border: none;
-            border-radius: 25px;
-            cursor: pointer;
-        }
-        .yes {
-            background-color: #e63946;
-            color: white;
-        }
-        .no {
-            background-color: #ddd;
-            color: #333;
-        }
-    </style>
+<meta charset="UTF-8">
+<title>Pour Zoé 🌹</title>
+
+<style>
+body {
+    font-family: Georgia, serif;
+    background-color: #fff5f7;
+    text-align: center;
+    padding: 40px;
+}
+
+h1 {
+    color: #b03060;
+}
+
+p {
+    font-size: 18px;
+    max-width: 600px;
+    margin: auto;
+}
+
+.buttons {
+    margin-top: 40px;
+    position: relative;
+    height: 140px;
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 16px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    position: absolute;
+    transition: transform 0.3s ease;
+}
+
+.yes {
+    background-color: #e63946;
+    color: white;
+    left: 50%;
+    transform: translateX(-120%);
+}
+
+.no {
+    background-color: #ddd;
+    color: #333;
+    left: 50%;
+    transform: translateX(20%);
+}
+</style>
 </head>
+
 <body>
 
 <h1>Zoé… 🌹</h1>
@@ -52,15 +70,30 @@ Juste avec sincérité.
 Est-ce que tu accepterais de partager cette Saint-Valentin avec moi ?
 </p>
 
-<button class="yes" onclick="oui()">💌 Oui, avec plaisir</button>
-<button class="no" onclick="non()">🤍 Non, mais merci</button>
+<div class="buttons">
+    <button class="yes" onclick="oui()">💌 Oui, avec plaisir</button>
+    <button class="no" id="noBtn">🤍 Non, mais merci</button>
+</div>
 
 <script>
+// Bouton NON qui se déplace
+const noBtn = document.getElementById("noBtn");
+
+noBtn.addEventListener("mouseenter", () => {
+    const x = Math.random() * 300 - 150;
+    const y = Math.random() * 80 - 40;
+    noBtn.style.transform = `translate(${x}px, ${y}px)`;
+});
+
+// Réponse OUI
 function oui() {
-    document.body.innerHTML = "<h1>Alors c’est un oui… 💖</h1><p>J’ai hâte de créer ce moment avec toi 🌹</p>";
-}
-function non() {
-    document.body.innerHTML = "<h1>Merci pour ta sincérité 🤍</h1><p>Cette page reste un sourire, rien de plus.</p>";
+    document.body.innerHTML = `
+        <h1>Alors c’est un oui… 💖</h1>
+        <p>
+        J’aimerais t’inviter le <strong>19 février 2026</strong>.<br><br>
+        J’ai hâte de créer ce moment avec toi 🌹
+        </p>
+    `;
 }
 </script>
 
